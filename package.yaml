@@ -1,0 +1,43 @@
+name: deadlift
+version: 0.1.0.0
+synopsis: Some crazy idea about preludes and imports and transformers
+github: snoyberg/deadlift
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+dependencies:
+- base >= 4.7 && < 5
+- containers
+- unordered-containers
+- vector
+- bytestring
+- text
+- unliftio
+- foreach
+- typed-process
+- hashable
+- say
+- mtl
+- monad-logger
+
+library:
+  source-dirs: src
+  exposed-modules:
+  - DeadLift
+  - DeadLift.ByteString
+  - DeadLift.HashMap
+  - DeadLift.HashSet
+  - DeadLift.Map
+  - DeadLift.Set
+  - DeadLift.Vector
+  - DeadLift.Text
+  - DeadLift.ForEach
+  - DeadLift.Process
+
+executables:
+  deadlift:
+    source-dirs: app
+    main: Main.hs
+    dependencies:
+    - deadlift
