@@ -5,6 +5,7 @@ import qualified RIO.Map as Map
 import qualified RIO.Set as Set
 import qualified RIO.Text as T
 import qualified RIO.ByteString as B
+import System.Environment (getArgs) -- TODO add to UnliftIO?
 
 qualifieds :: Map Text Text
 qualifieds = Map.fromList
@@ -144,7 +145,7 @@ breakModule input = fromMaybe ([], input) $ do
   case break (hasWhere . snd) afterModule of
     (_, []) -> Nothing
     (beforeWhere, withWhere:afterWhere) ->
-      Just (beforeWhere ++ [withWhere], afterWhere)
+      Just (beforeModule ++ beforeWhere ++ [withWhere], afterWhere)
   where
     isModule = ("module " `T.isPrefixOf`)
     hasWhere = ("where" `T.isInfixOf`)

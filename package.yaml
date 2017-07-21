@@ -19,6 +19,12 @@ dependencies:
 - say
 - mtl
 - monad-logger
+- deepseq
+
+# Used to provide instances for RIO, because why not?
+- exceptions
+- monad-control
+- transformers-base
 
 library:
   source-dirs: src
