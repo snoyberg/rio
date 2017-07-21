@@ -16,7 +16,6 @@ qualifieds = Map.fromList
   , ("Set", "RIO.Set")
   , ("V", "RIO.Vector")
   , ("T", "RIO.Text")
-  , ("FE", "RIO.ForEach")
   , ("Proc", "RIO.Process")
   ]
 

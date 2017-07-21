@@ -7,6 +7,7 @@ main = do
   let text = decodeUtf8 bs
       m = Map.fromListWith (+) $ map (, 1 :: Int) (T.unpack text)
   mapM_ sayShow $ Map.toList m
+    {- bye bye foreach
   final <- forEach (0 :: Int)
     (\total x -> do
         if x <= 10
@@ -16,3 +17,4 @@ main = do
           else return $ Break total)
     (FE.enumFromTo 1 1000000)
   sayShow final
+    -}
