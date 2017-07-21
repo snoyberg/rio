@@ -14,7 +14,6 @@ dependencies:
 - bytestring
 - text
 - unliftio
-- foreach
 - typed-process
 - hashable
 - say
@@ -33,7 +32,6 @@ library:
   - RIO.Set
   - RIO.Vector
   - RIO.Text
-  - RIO.ForEach
   - RIO.Process
 
 executables:

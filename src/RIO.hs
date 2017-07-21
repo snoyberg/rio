@@ -1,7 +1,6 @@
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 module RIO
-  ( module ForEach.Prelude
-  , module Prelude -- FIXME! better prelude
+  ( module Prelude -- FIXME! better prelude
   , module Control.Applicative
   , module Control.Monad
   , module Data.Word
@@ -39,7 +38,6 @@ import Control.Monad
 import System.Environment
 import Data.Word
 import Data.Int
-import ForEach.Prelude
 import Data.Text (Text)
 import qualified Data.Text.Lazy as TL
 import Data.ByteString (ByteString)
