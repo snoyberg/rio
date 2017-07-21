@@ -1,4 +1,4 @@
-module DeadLift.HashMap
+module RIO.HashMap
   ( module Data.HashMap.Strict
   ) where
 

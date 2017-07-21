@@ -1,4 +1,4 @@
-module DeadLift.Map
+module RIO.Map
   ( module Data.Map.Strict
   ) where
 

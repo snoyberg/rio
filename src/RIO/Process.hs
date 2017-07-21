@@ -1,4 +1,4 @@
-module DeadLift.Process
+module RIO.Process
   ( module System.Process.Typed
   ) where
 

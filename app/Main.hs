@@ -1,22 +1,22 @@
 {-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
-import DeadLift
-import qualified DeadLift.Map as Map
-import qualified DeadLift.Set as Set
-import qualified Data.Text as T
-import qualified Data.ByteString as B
+import RIO
+import qualified RIO.Map as Map
+import qualified RIO.Set as Set
+import qualified RIO.Text as T
+import qualified RIO.ByteString as B
 
 qualifieds :: Map Text Text
 qualifieds = Map.fromList
-  [ ("B", "DeadLift.ByteString")
-  , ("HashMap", "DeadLift.HashMap")
-  , ("HashSet", "DeadLift.HashSet")
-  , ("Map", "DeadLift.Map")
-  , ("Set", "DeadLift.Set")
-  , ("V", "DeadLift.Vector")
-  , ("T", "DeadLift.Text")
-  , ("FE", "DeadLift.ForEach")
-  , ("Proc", "DeadLift.Process")
+  [ ("B", "RIO.ByteString")
+  , ("HashMap", "RIO.HashMap")
+  , ("HashSet", "RIO.HashSet")
+  , ("Map", "RIO.Map")
+  , ("Set", "RIO.Set")
+  , ("V", "RIO.Vector")
+  , ("T", "RIO.Text")
+  , ("FE", "RIO.ForEach")
+  , ("Proc", "RIO.Process")
   ]
 
 extensions :: Set Text
@@ -107,7 +107,7 @@ addImports used input =
         (before, after) -> before ++ imports ++ after
   where
     isImport = ("import " `T.isPrefixOf`)
-    imports = (Nothing, "import DeadLift") : map
+    imports = (Nothing, "import RIO") : map
       (\(k, v) -> (Nothing, T.concat
         [ "import qualified "
         , v

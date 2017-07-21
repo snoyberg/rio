@@ -1,4 +1,4 @@
-module DeadLift.Vector
+module RIO.Vector
   ( module Data.Vector.Generic
   ) where
 

@@ -1,4 +1,4 @@
-module DeadLift.HashSet
+module RIO.HashSet
   ( module Data.HashSet
   ) where
 

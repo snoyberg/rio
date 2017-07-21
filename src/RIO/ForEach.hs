@@ -1,4 +1,4 @@
-module DeadLift.ForEach
+module RIO.ForEach
   ( module ForEach
   ) where
 

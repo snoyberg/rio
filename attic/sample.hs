@@ -1,4 +1,4 @@
-{-# OPTIONS_GHC -F -pgmF deadlift #-}
+{-# OPTIONS_GHC -F -pgmF rio #-}
 module Main where
 
 main :: IO ()

@@ -1,4 +1,4 @@
-module DeadLift.ByteString
+module RIO.ByteString
   ( module Data.ByteString
   ) where
 

@@ -1,5 +1,5 @@
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
-module DeadLift
+module RIO
   ( module ForEach.Prelude
   , module Prelude -- FIXME! better prelude
   , module Control.Applicative
@@ -10,6 +10,7 @@ module DeadLift
   , module System.Environment -- FIXME do better
   , module Data.Maybe
   , module Data.Monoid
+  , module Control.Monad.RIO
   , MonadReader (..)
   , Text
   , LText
@@ -30,6 +31,7 @@ module DeadLift
   ) where
 
 import Prelude hiding (lines, unlines, readFile, writeFile)
+import Control.Monad.RIO
 import Data.Maybe
 import Data.Monoid
 import Control.Applicative
@@ -70,14 +72,6 @@ fromByteVector :: ByteString -> SVector Word8
 fromByteVector bs =
     let (fptr, off, len) = BI.toForeignPtr bs
      in VS.unsafeFromForeignPtr fptr off len
-
-newtype DeadLift env m a = DeadLift
-  { unDeadLift :: ReaderT env m a
-  }
-  deriving (Functor, Applicative, Monad, MonadTrans, MonadIO)
-
-startDL :: MonadIO m => DeadLift () IO a -> m a
-startDL (DeadLift (ReaderT f)) = liftIO (f ())
 
 decodeUtf8 :: ByteString -> Text
 decodeUtf8 = decodeUtf8With lenientDecode

@@ -1,4 +1,4 @@
-module DeadLift.Set
+module RIO.Set
   ( module Data.Set
   ) where
 

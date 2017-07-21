@@ -1,4 +1,4 @@
-module DeadLift.Text
+module RIO.Text
   ( module Data.Text
   ) where
 

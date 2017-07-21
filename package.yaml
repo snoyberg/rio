@@ -1,7 +1,7 @@
-name: deadlift
+name: rio
 version: 0.1.0.0
-synopsis: Some crazy idea about preludes and imports and transformers
-github: snoyberg/deadlift
+synopsis: Reader+IO monad plus utilities
+github: snoyberg/rio
 extra-source-files:
 - README.md
 - ChangeLog.md
@@ -24,20 +24,21 @@ dependencies:
 library:
   source-dirs: src
   exposed-modules:
-  - DeadLift
-  - DeadLift.ByteString
-  - DeadLift.HashMap
-  - DeadLift.HashSet
-  - DeadLift.Map
-  - DeadLift.Set
-  - DeadLift.Vector
-  - DeadLift.Text
-  - DeadLift.ForEach
-  - DeadLift.Process
+  - Control.Monad.RIO
+  - RIO
+  - RIO.ByteString
+  - RIO.HashMap
+  - RIO.HashSet
+  - RIO.Map
+  - RIO.Set
+  - RIO.Vector
+  - RIO.Text
+  - RIO.ForEach
+  - RIO.Process
 
 executables:
-  deadlift:
+  rio:
     source-dirs: app
     main: Main.hs
     dependencies:
-    - deadlift
+    - rio
